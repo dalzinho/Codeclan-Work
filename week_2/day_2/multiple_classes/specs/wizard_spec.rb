@@ -1,12 +1,15 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../wizard')
+require_relative('../wand')
 
 class TestWizard < MiniTest::Test
 
   def setup
-    @ron = Wizard.new("Ron Weasley", "oak", "unicorn hair")
-    @harry = Wizard.new("Harry Potter", "Yew", "Phoenix Feather")
+    @broken_wand = Wand.new("Oak", "Unicorn Hair")
+    @elder_wand = Wand.new("Holly", "Phoenix Feather")
+    @ron = Wizard.new("Ron Weasley", @broken_wand)
+    @harry = Wizard.new("Harry Potter", @elder_wand)
   end
 
   def test_wizard_has_name
