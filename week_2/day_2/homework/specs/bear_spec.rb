@@ -52,7 +52,7 @@ class BearTest < MiniTest::Test
     @yogi.eats(@dory, @amazon)
     @yogi.eats(@harold, @amazon)
 
-    assert_equal([], @yogi.is_in_woods)
+    assert_equal([], @yogi.is_in_the_woods)
   end
 
 end

@@ -22,7 +22,7 @@ class Bear
     return @stomach.count
   end
 
-  def is_in_woods
+  def is_in_the_woods
     @stomach.clear
   end
 

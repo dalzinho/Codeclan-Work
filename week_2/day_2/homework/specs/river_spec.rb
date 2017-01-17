@@ -13,7 +13,7 @@ class RiverTest < MiniTest::Test
     @dory = Fish.new("Dory")
     @harold = Fish.new("Harold")
 
-
+    @many_fish = [@nemo, @dory, @harold]
   end
 
   def test_river_has_name
@@ -25,9 +25,15 @@ class RiverTest < MiniTest::Test
   end
 
   def test_river_can_have_many_fish
-    @amazon.fish << @nemo
-    @amazon.fish << @dory
+    @amazon.fish.push(@many_fish).flatten!
 
+    assert_equal(3, @amazon.count_fish)
+  end
+
+  def test_eating_fish_reduces_number
+    @amazon.fish.push(@many_fish).flatten!
+    @amazon.fish_eaten(@harold)
+    
     assert_equal(2, @amazon.count_fish)
   end
 
