@@ -51,7 +51,7 @@ class TestBus < MiniTest::Test
 
   def test_can_empty_bus
     @bus.get_on(@john)
-    assert_equal([], @bus.empty!)
+    assert_equal([], @bus.get_aff)
   end
 
   def test_bus_can_pick_up_from_stop

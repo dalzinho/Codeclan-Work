@@ -29,8 +29,8 @@ class Bus
     # return "Passenger not found!"
   end
 
-  def empty!
-    @passengers = []
+  def get_aff
+    @passengers.clear
   end
 
  def pick_up_from_stop(bus_stop)

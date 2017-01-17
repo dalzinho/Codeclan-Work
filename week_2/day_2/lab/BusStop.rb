@@ -5,7 +5,7 @@ class BusStop
   def initialize(name)
 
     @name = name
-    @queue = []
+    @queue = Array.new
 
   end
 
@@ -14,7 +14,7 @@ class BusStop
   end
 
   def bus_arrives
-    @queue = []
+    @queue.clear
   end
 
 end
