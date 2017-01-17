@@ -25,5 +25,10 @@ class Team
     return @points
   end
 
+  def find_player(search_term)
+    for player in @players
+     return player == search_term
+    end
+  end
 
 end

@@ -59,30 +59,30 @@ class Library
 
 end
 
-  my_library = Library.new([
-    { 
-      title: "lord_of_the_rings",
-      rental_details: { 
-       student_name: "Jeff", 
-       date: "01/12/16"
-     }
-     },
-     {
-      title: "hitchhikers_guide_to_the_galaxy",
+my_library = Library.new([
+  { 
+    title: "lord_of_the_rings",
+    rental_details: { 
+     student_name: "Jeff", 
+     date: "01/12/16"
+   }
+   },
+   {
+    title: "hitchhikers_guide_to_the_galaxy",
+    rental_details: {
+      student_name: "Kevin",
+      date: "10/02/2017"
+    }
+    },
+    {
+      title: "the_windup_bird_chronicle",
       rental_details: {
-        student_name: "Kevin",
-        date: "10/02/2017"
+        student_name: "Gillian",
+        date: "11/02/2017"
       }
       },
-      {
-        title: "the_windup_bird_chronicle",
-        rental_details: {
-          student_name: "Gillian",
-          date: "11/02/2017"
-        }
-        },
 
-        ])
+      ])
 
 puts my_library.list_all_texts
 # puts my_library.all_details("lord_of_the_rings")

@@ -32,6 +32,12 @@ class TestTeam < MiniTest::Test
 
   end
 
+  def test_can_find_player
+
+    assert_equal(true, @pollok.find_player("Sideserf"))
+
+  end
+
   def test_can_add_points_for_wins
     assert_equal(3, @pollok.add_points("win"))
   end
