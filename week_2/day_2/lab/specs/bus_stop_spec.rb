@@ -22,19 +22,29 @@ class TestBusStop < MiniTest::Test
 
   end
 
-  def test_can_get_queue
+  def test_queue_is_empty
 
-    assert_equal(Array.new(), @bus_stop.queue)
+    assert_equal(0, @bus_stop.number_waiting)
 
   end
 
   def test_person_can_join_queue
 
     @bus_stop.join_queue(@person1)
-    assert_equal(Person, @bus_stop.queue[0].class)
+    @bus_stop.join_queue(@person2)
+    assert_equal(2, @bus_stop.number_waiting)
 
   end
 
+  def test_queue_empties_when_bus_arrives
+  
+    @bus_stop.join_queue(@person1)
+    @bus_stop.join_queue(@person2)
+    @bus_stop.join_queue(@person3)
 
+    @bus_stop.bus_arrives
 
+    assert_equal(0, @bus_stop.number_waiting)
+  end
+  
 end
