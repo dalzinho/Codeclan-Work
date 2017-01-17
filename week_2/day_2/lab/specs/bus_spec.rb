@@ -3,14 +3,18 @@ require 'minitest/rg'
 
 require_relative '../Bus'
 require_relative '../Person'
+require_relative '../BusStop'
 
 class TestBus < MiniTest::Test
 
   def setup
 
-    @bus = Bus.new(4, "Broomhill", [])
+    @bus = Bus.new(4, "Broomhill")
 
     @john = Person.new("John", 36)
+
+    @bus_stop = BusStop.new("Cathcart Road")
+    @bus_stop.join_queue(@john)
 
   end
 
@@ -44,6 +48,19 @@ class TestBus < MiniTest::Test
 
     assert_equal(0, @bus.passengers.count)
   end
-  
+
+  def test_can_empty_bus
+    @bus.get_on(@john)
+    assert_equal([], @bus.empty!)
+  end
+
+  def test_bus_can_pick_up_from_stop
+
+    @bus.pick_up_from_stop(@bus_stop)
+    assert_equal(1, @bus.passengers.count)
+    assert_equal(0, @bus_stop.queue.count)
+  end
+
+
 
 end
