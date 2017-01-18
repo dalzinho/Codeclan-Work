@@ -13,12 +13,15 @@ class Player
     @current_position += dice_value
   end
 
-  def take_turn(board, dice)
-    unless @current_position == @board.count
+  def take_turn
+    unless @current_position == @board.board.count
       roll = @dice.roll
       move(roll)
-      @current_position += @board[@current_position]
-      return @current_position
+
+      unless @current_position > @board.board.count
+        @current_position += @board.board[@current_position] 
+        return @current_position
+      end
     end
     return "You have won!"
   end
