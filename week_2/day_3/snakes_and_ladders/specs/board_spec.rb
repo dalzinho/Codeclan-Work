@@ -14,7 +14,7 @@ class BoardTest < MiniTest::Test
   end
 
   def test_player_moves_on_dice_roll
-
+    # nah. Vaya con dios
   end
 
 end

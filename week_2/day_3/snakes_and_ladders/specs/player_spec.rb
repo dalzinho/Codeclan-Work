@@ -3,20 +3,16 @@ require 'minitest/rg'
 
 require_relative '../Player'
 require_relative '../Board'
+require_relative '../Dice'
 
 class PlayerTest < MiniTest::Test
   
   def setup
 
+    @board = Board.new()
+    @dice = Dice.new()
+    @player_1 = Player.new("Player One", @board, @dice)
     
-    @player_1 = Player.new("Player One")
-    # @snake = [
-    #   {
-    #     head: 19
-    #     tail: 12
-    #   }
-    # ]
-
   end
 
   def test_player_has_name
@@ -30,15 +26,5 @@ class PlayerTest < MiniTest::Test
   def test_can_increment_position
     assert_equal(6, @player_1.move(6))
   end
-
-  def test_if_player_has_won
-    @player_1.move(100)
-
-    assert_equal(true, @player_1.has_won?)
-  end
-
-  # def test_has_landed_on_snake
-  #   assert_equal()
-  # end
 
 end
