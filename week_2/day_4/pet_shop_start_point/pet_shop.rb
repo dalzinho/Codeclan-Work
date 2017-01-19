@@ -7,21 +7,19 @@ class PetShop
   end
 
   def pet_type(pet_name)
-    merlin = @pets.find { |pet| pet.name == pet_name}
-    return merlin.type
+    found_pet = @pets.detect { |pet| pet.name == pet_name}
+    return found_pet.type
   end
 
-  def get_names_of_all_pets_of_type(type)
-      
-    dogs = @pets.select { |pet| pet.type == type }
-    return dogs.collect { |dog| dog.name }
+  def get_names_of_all_pets_of_type(type_search)
+    filtered_pets = @pets.select { |pet| pet.type == type_search }
+    return filtered_pets.collect { |dog| dog.name }
   end
 
   def get_number_of_pets_costing_at_least(minimum_value)
-
-    expensive_pets = @pets.select { |pet| pet.price >= minimum_value }
-    return expensive_pets.count
-
-
+    
+    @pets.count { |pet| pet.price >= minimum_value }
+    
   end
+
 end
