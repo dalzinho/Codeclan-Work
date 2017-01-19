@@ -10,7 +10,7 @@ class Bear
   end
 
   def eats(fish, river)
-    @stomach << fish
+    @stomach << fish if !fish.nil?
     river.fish_eaten(fish)
   end
 

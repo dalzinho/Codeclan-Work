@@ -18,7 +18,7 @@ class Player
       roll = @dice.roll
       move(roll)
 
-      unless @current_position > @board.board.count
+      unless @current_position >= @board.board.count
         @current_position += @board.board[@current_position] 
         return @current_position
       end
