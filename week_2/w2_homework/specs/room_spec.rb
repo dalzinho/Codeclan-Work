@@ -47,10 +47,10 @@ class TestRoom < MiniTest::Test
     assert_equal("A Message to You, Rudy", @room.songs[0].title)
   end
 
-  # def test_can_turn_customer_away_from_full_room
-  #   @room.guests.push(@loads_of_guests).flatten!
+  def test_can_turn_customer_away_from_full_room
+    @room.guests.push(@loads_of_guests).flatten!
 
-  #   assert_equal("Sorry, that room is full!", @room.add_and_charge_guest(@guest7))
-  # end
+    assert_equal("Sorry, that room is full!", @room.add_and_charge_guest(@guest7))
+  end
 
 end

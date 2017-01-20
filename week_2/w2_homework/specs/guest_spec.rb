@@ -10,9 +10,10 @@ class TestGuest < MiniTest::Test
 
   def setup
     @room = Room.new(6)
-    @guest = Guest.new("Frank Zappa", "A Message to You, Rudy", 100)
+    @guest = Guest.new("Frank Zappa", @song, 100)
     @poor_guest = Guest.new("Nae Money", "The Boxer", 4 )
     @song = Song.new("A Message to You, Rudy", "The Specials")
+    @song2 = Song.new("Telstar", "The Tornados")
     @lobby = Lobby.new()
   end
 
@@ -40,9 +41,13 @@ class TestGuest < MiniTest::Test
     assert_equal("Sorry, you can't afford this room.", @poor_guest.pay_entry_fee(@room))
   end
 
-  # def test_can_detect_woo_hoo
+  # def test_guest_says_woo_hoo_when_fave_song_on_playlist
   #   @room.add_song(@song)
-  #   assert_equal(true, @guest.woo_hoo?) 
+  #   @room.add_song(@song2)
+
+  #   assert_equal(2, @room.songs.count)
+  #   assert_equal(@song, @room.songs[0])
+  #   assert_equal("Woo hoo! Yaaaaassssss!", @guest.woo_hoo(@room)) 
   # end
 
 end
