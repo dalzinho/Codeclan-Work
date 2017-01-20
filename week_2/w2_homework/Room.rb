@@ -1,6 +1,6 @@
 class Room
 
-  attr_reader :guests, :cash
+  attr_reader :guests, :cash, :songs
 
   def initialize()
 

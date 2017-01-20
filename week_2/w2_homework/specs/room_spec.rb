@@ -3,6 +3,7 @@ require 'minitest/rg'
 
 require_relative '../Room'
 require_relative '../Guest'
+require_relative '../Song'
 
 class TestRoom < MiniTest::Test
 
@@ -36,6 +37,7 @@ class TestRoom < MiniTest::Test
 
   def test_can_add_song_to_room_playlist
     @room.assign_song(@song)
+    assert_equal("A Message to You, Rudy", @room.songs[0].title)
   end
 
 end
