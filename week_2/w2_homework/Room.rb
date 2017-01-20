@@ -2,17 +2,13 @@ class Room
 
   attr_reader :guests, :cash, :songs
 
-  def initialize()
+  def initialize(capacity)
 
-    @capacity = 6
+    @capacity = capacity
     @songs = []
     @guests = []
     @cash = 0
 
-  end
-
-  def assign_guest(guest)
-    @guests.push(guest)
   end
 
   def add_cash(entry_fee)
@@ -21,18 +17,20 @@ class Room
 
   def add_and_charge_guest(guest)
     if @guests.count < @capacity
-      assign_guest(guest)
+      guest.to_room(self)
       guest.pay_entry_fee(self)
     else
       return "Sorry, that room is full!"
     end
   end
 
-  def remove_guest(guest)
+  def remove_guest(guest, lobby)
+
+    guest.to_lobby(lobby)
     @guests.delete(guest)
   end
 
-  def assign_song(song)
+  def add_song(song)
     @songs << song
   end
 

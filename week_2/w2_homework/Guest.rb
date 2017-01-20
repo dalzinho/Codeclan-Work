@@ -8,11 +8,29 @@ class Guest
     @bar_bill = 0
   end
 
+  def to_lobby(lobby)
+    lobby.guests.push(self)
+  end
+
+  def to_room(room)
+    room.guests.push(self)
+  end
+
   def pay_entry_fee(room)
     if @cash >= 5
       @cash -= 5 
       room.add_cash(5)
+    else
+      return "Sorry, you can't afford this room."
+
     end
+  end
+
+
+  def woo_hoo?
+
+  @room.songs.find { |song| song == @guest.favourite_song}
+
   end
 
 end
