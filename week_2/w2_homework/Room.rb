@@ -19,10 +19,12 @@ class Room
     @cash += entry_fee
   end
 
-  def add_and_charge_guest(room, guest)
+  def add_and_charge_guest(guest)
     if @guests.count < @capacity
       assign_guest(guest)
-      guest.pay_entry_fee(room)
+      guest.pay_entry_fee(self)
+    else
+      return "Sorry, that room is full!"
     end
   end
 
