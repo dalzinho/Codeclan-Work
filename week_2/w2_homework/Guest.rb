@@ -27,10 +27,12 @@ class Guest
   end
 
 
-  def woo_hoo?
+  # def woo_hoo?
 
-  @room.songs.find { |song| song == @guest.favourite_song}
+  # @room.songs.each do |song|
+  #   @room.guests.each { |guest| guest.favourite_song == song }
+  # end
 
-  end
+
 
 end

@@ -1,6 +1,7 @@
 class Lobby
 
   attr_reader :guests
+  
   def initialize
     @guests = []
   end

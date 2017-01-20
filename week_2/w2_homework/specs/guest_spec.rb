@@ -40,9 +40,9 @@ class TestGuest < MiniTest::Test
     assert_equal("Sorry, you can't afford this room.", @poor_guest.pay_entry_fee(@room))
   end
 
-  def test_can_detect_woo_hoo
-    @room.add_song(@song)
-    assert_equal(true, @guest.woo_hoo?) 
-  end
+  # def test_can_detect_woo_hoo
+  #   @room.add_song(@song)
+  #   assert_equal(true, @guest.woo_hoo?) 
+  # end
 
 end

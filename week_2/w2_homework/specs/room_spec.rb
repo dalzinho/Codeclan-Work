@@ -4,6 +4,7 @@ require 'minitest/rg'
 require_relative '../Room'
 require_relative '../Guest'
 require_relative '../Song'
+require_relative '../Lobby'
 
 class TestRoom < MiniTest::Test
 
@@ -19,6 +20,8 @@ class TestRoom < MiniTest::Test
     @guest7 = Guest.new("Frank Zappa", "Immigrant Song", 100)
 
     @song = Song.new("A Message to You, Rudy", "The Specials")
+
+    @lobby = Lobby.new
 
     @some_guests = [@guest, @guest2, @guest3]
     @loads_of_guests = [@guest, @guest2, @guest3, @guest4, @guest5, @guest6]
@@ -39,10 +42,10 @@ class TestRoom < MiniTest::Test
     assert_equal(2, @room.guests.count)
   end
 
-  # def test_can_add_song_to_room_playlist
-  #   @room.assign_song(@song)
-  #   assert_equal("A Message to You, Rudy", @room.songs[0].title)
-  # end
+  def test_can_add_song_to_room_playlist
+    @room.add_song(@song)
+    assert_equal("A Message to You, Rudy", @room.songs[0].title)
+  end
 
   # def test_can_turn_customer_away_from_full_room
   #   @room.guests.push(@loads_of_guests).flatten!
