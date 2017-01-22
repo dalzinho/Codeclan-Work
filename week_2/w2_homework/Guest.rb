@@ -9,18 +9,22 @@ class Guest
     @favourite_song = favourite_song
   end
 
-  def send_to_room(room)
-    if room.guests.count < room.capacity
-      room.guests << self
-      @current_room = room
-    else
-      return "Sorry, room is full."
-    end
-  end
-
   def pay_entry(room)
     @cash -= room.cost
     room.add_entry_fee
+  end
+
+  def send_to_room(room)
+    if @cash >= room.cost
+      if room.guests.count < room.capacity
+        room.guests << self
+        @current_room = room
+        pay_entry(room)
+      else
+        return "Sorry, room is full."
+      end
+    else return "Sorry, you are too skint."
+    end
   end
 
   def leave_room

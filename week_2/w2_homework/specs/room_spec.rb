@@ -11,7 +11,7 @@ class TestRoom < MiniTest::Test
 
     @room = Room.new(6)
     @song = Song.new("Telstar", "The Tornados")
-    @guest = Guest.new("Frank Zappa", 100)
+    @guest = Guest.new("Frank Zappa", 100, @song)
 
   end
 
@@ -36,5 +36,6 @@ class TestRoom < MiniTest::Test
     @guest.send_to_room(@room)
     assert_equal(5, @room.cash)
   end
+
 
 end

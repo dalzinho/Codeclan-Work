@@ -4,6 +4,7 @@ require 'minitest/rg'
 require_relative '../Guest'
 require_relative '../Room'
 require_relative '../Song'
+require_relative '../Bar'
 
 class TestGuest < MiniTest::Test
 
@@ -11,10 +12,15 @@ class TestGuest < MiniTest::Test
     @song1 = Song.new("Telstar", "The Tornados")
     @song2 = Song.new("The Birdie Song", "The Tweets")
 
+    @bar = Bar.new()
+
     @guest = Guest.new("Frank Zappa", 100, @song1)
     @unwelcome_guest = Guest.new("The guy from Boney M", 20, @song2)
+    @skint_guest = Guest.new("Jake E", 1, @song2)
 
     @room = Room.new(1)
+
+
 
   end
 
@@ -60,4 +66,9 @@ class TestGuest < MiniTest::Test
     assert_equal([@song1], @room.songs)
     assert_equal(true, @guest.woo_hoo?(@room))
   end
+
+def test_send_to_room_rejects_insufficient_cash
+  
+  assert_equal("Sorry, you are too skint.", @skint_guest.send_to_room(@room))
+end
 end

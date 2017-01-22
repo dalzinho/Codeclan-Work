@@ -17,7 +17,5 @@ class Room
   def add_entry_fee
     @cash += @cost
   end
-
-
-
+  
 end
