@@ -3,13 +3,18 @@ require 'minitest/rg'
 
 require_relative '../Guest'
 require_relative '../Room'
+require_relative '../Song'
 
 class TestGuest < MiniTest::Test
 
   def setup
-    @guest = Guest.new("Frank Zappa", 100)
-    @unwelcome_guest = Guest.new("The guy from Boney M", 20)
+    @guest = Guest.new("Frank Zappa", 100, nil)
+    @unwelcome_guest = Guest.new("The guy from Boney M", 20, @song2)
+
     @room = Room.new(1)
+
+    @song = Song.new("Telstar", "The Tornados")
+    @song2 = Song.new("The Birdie Song", "The Tweets")
   end
 
   def test_can_add_guest_to_room
@@ -43,4 +48,13 @@ class TestGuest < MiniTest::Test
     @guest.send_to_room(@room)
     assert_equal(95, @guest.cash)
   end
+
+  def test_can_get_favourite_song
+    assert_equal(@song1, @guest.favourite_song)
+    assert_equal(@song2, @unwelcome_guest.favourite_song)
+  end
+
+  # def test_can_detect_if_room_is_woo_hoo_worthy
+
+  # end
 end

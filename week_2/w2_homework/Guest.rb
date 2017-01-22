@@ -1,11 +1,12 @@
 class Guest
 
-  attr_reader :current_room, :cash
+  attr_reader :current_room, :cash, :favourite_song
 
-  def initialize(name, cash)
+  def initialize(name, cash, favourite_song)
     @name = name
     @current_room = nil
     @cash = cash
+    @favourite_song = favourite_song
   end
 
   def send_to_room(room)
@@ -22,5 +23,8 @@ class Guest
   def leave_room
     @current_room.guests.delete(self)
   end
+
+  # def woo_hoo?
+  # end
 
 end
