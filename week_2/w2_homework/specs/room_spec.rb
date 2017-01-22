@@ -1,12 +1,15 @@
 require 'minitest/autorun'
 require 'minitest/rg'
+
 require_relative '../Room'
+require_relative '../Song'
 
 class TestRoom < MiniTest::Test
 
   def setup
 
     @room = Room.new()
+    @song = Song.new("Telstar", "The Tornados")
 
   end
 
@@ -18,8 +21,9 @@ class TestRoom < MiniTest::Test
     assert_equal([], @room.guests)
   end
 
-  # def test_can_add_song_to_room
-  #   @room.add_song(@song)
-  #   assert.equal([@song], @room.songs)
-  # end
+  def test_can_add_song_to_room
+    @room.add_song(@song)
+    assert_equal([@song], @room.songs)
+  end
+
 end
