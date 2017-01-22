@@ -8,8 +8,12 @@ class Guest
   end
 
   def send_to_room(room)
-    room.guests << self
-    @current_room = room
+    if room.guests.count < room.capacity
+      room.guests << self
+      @current_room = room
+    else
+      return "Sorry, room is full."
+    end
   end
 
   def leave_room

@@ -8,7 +8,8 @@ class TestGuest < MiniTest::Test
 
   def setup
     @guest = Guest.new("Frank Zappa")
-    @room = Room.new()
+    @unwelcome_guest = Guest.new("The guy from Boney M")
+    @room = Room.new(1)
   end
 
   def test_can_add_guest_to_room
@@ -26,6 +27,12 @@ class TestGuest < MiniTest::Test
     @guest.send_to_room(@room)
     @guest.leave_room
     assert_equal([], @room.guests)
+  end
+
+  def test_turns_away_if_room_full
+    @guest.send_to_room(@room)
+    assert_equal("Sorry, room is full.", @unwelcome_guest.send_to_room(@room))
+
   end
 
 end
