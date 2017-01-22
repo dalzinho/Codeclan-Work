@@ -24,7 +24,8 @@ class Guest
     @current_room.guests.delete(self)
   end
 
-  # def woo_hoo?
-  # end
+  def woo_hoo?(room)
+    room.songs.include?(@favourite_song)
+  end
 
 end
