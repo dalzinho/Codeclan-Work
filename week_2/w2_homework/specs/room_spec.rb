@@ -3,6 +3,7 @@ require 'minitest/rg'
 
 require_relative '../Room'
 require_relative '../Song'
+require_relative '../Guest'
 
 class TestRoom < MiniTest::Test
 
@@ -10,6 +11,7 @@ class TestRoom < MiniTest::Test
 
     @room = Room.new(6)
     @song = Song.new("Telstar", "The Tornados")
+    @guest = Guest.new("Frank Zappa", 100)
 
   end
 
@@ -28,6 +30,11 @@ class TestRoom < MiniTest::Test
 
   def test_room_reports_capacity
     assert_equal(6, @room.capacity)
+  end
+
+  def test_room_gets_guest_cash
+    @guest.send_to_room(@room)
+    assert_equal(5, @room.cash)
   end
 
 end

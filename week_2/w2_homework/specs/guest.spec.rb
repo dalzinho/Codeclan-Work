@@ -39,4 +39,8 @@ class TestGuest < MiniTest::Test
     assert_equal(20, @unwelcome_guest.cash)
   end
 
+  def test_room_charges_guest
+    @guest.send_to_room(@room)
+    assert_equal(95, @guest.cash)
+  end
 end

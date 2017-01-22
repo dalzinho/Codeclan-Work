@@ -12,6 +12,8 @@ class Guest
     if room.guests.count < room.capacity
       room.guests << self
       @current_room = room
+      @cash -= room.cost
+      room.add_entry_fee
     else
       return "Sorry, room is full."
     end

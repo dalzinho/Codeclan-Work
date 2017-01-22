@@ -1,6 +1,6 @@
 class Room
 
-  attr_reader :songs, :guests, :capacity
+  attr_reader :songs, :guests, :capacity, :cost, :cash
 
   def initialize(capacity)
     @capacity = capacity
@@ -13,5 +13,11 @@ class Room
   def add_song(song)
     @songs << song
   end
+
+  def add_entry_fee
+    @cash += @cost
+  end
+
+
 
 end
