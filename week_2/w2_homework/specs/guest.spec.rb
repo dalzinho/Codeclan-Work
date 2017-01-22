@@ -7,8 +7,8 @@ require_relative '../Room'
 class TestGuest < MiniTest::Test
 
   def setup
-    @guest = Guest.new("Frank Zappa")
-    @unwelcome_guest = Guest.new("The guy from Boney M")
+    @guest = Guest.new("Frank Zappa", 100)
+    @unwelcome_guest = Guest.new("The guy from Boney M", 20)
     @room = Room.new(1)
   end
 
@@ -32,7 +32,11 @@ class TestGuest < MiniTest::Test
   def test_turns_away_if_room_full
     @guest.send_to_room(@room)
     assert_equal("Sorry, room is full.", @unwelcome_guest.send_to_room(@room))
+  end
 
+  def test_guests_have_cash
+    assert_equal(100, @guest.cash)
+    assert_equal(20, @unwelcome_guest.cash)
   end
 
 end

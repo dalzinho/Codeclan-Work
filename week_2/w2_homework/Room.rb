@@ -6,6 +6,8 @@ class Room
     @capacity = capacity
     @guests = []
     @songs = []
+    @cost = 5
+    @cash = 0
   end
 
   def add_song(song)
