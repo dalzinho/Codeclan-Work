@@ -4,15 +4,12 @@ require 'minitest/rg'
 require_relative '../Guest'
 require_relative '../Room'
 require_relative '../Song'
-require_relative '../Bar'
 
 class TestGuest < MiniTest::Test
 
   def setup
     @song1 = Song.new("Telstar", "The Tornados")
     @song2 = Song.new("The Birdie Song", "The Tweets")
-
-    @bar = Bar.new()
 
     @guest = Guest.new("Frank Zappa", 100, @song1)
     @unwelcome_guest = Guest.new("The guy from Boney M", 20, @song2)
@@ -43,7 +40,7 @@ class TestGuest < MiniTest::Test
 
   def test_turns_away_if_room_full
     @guest.send_to_room(@room)
-    assert_equal("Sorry, room is full.", @unwelcome_guest.send_to_room(@room))
+    assert_equal("The guy from Boney M is turned away. The room is full.", @unwelcome_guest.send_to_room(@room))
   end
 
   def test_guests_have_cash
@@ -69,6 +66,6 @@ class TestGuest < MiniTest::Test
 
 def test_send_to_room_rejects_insufficient_cash
   
-  assert_equal("Sorry, you are too skint.", @skint_guest.send_to_room(@room))
+  assert_equal("Jake E cannot afford to get in.", @skint_guest.send_to_room(@room))
 end
 end

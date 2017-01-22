@@ -1,6 +1,6 @@
 class Guest
 
-  attr_reader :current_room, :cash, :favourite_song
+  attr_reader :current_room, :cash, :favourite_song, :name
 
   def initialize(name, cash, favourite_song)
     @name = name
@@ -20,10 +20,11 @@ class Guest
         room.guests << self
         @current_room = room
         pay_entry(room)
+        return "#{self.name} enters the room."
       else
-        return "Sorry, room is full."
+        return "#{self.name} is turned away. The room is full."
       end
-    else return "Sorry, you are too skint."
+    else return "#{self.name} cannot afford to get in."
     end
   end
 
