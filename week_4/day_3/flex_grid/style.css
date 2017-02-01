@@ -1,0 +1,45 @@
+.grid {
+  border: solid 5px black;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.cell {
+  flex: 2 2 auto;
+  padding: 10px;
+  border: dashed 1px black;
+  justify-content: center;
+  /*margin: 5px;*/
+}
+
+@media all and (min-width: 480px) {
+  .grid-row-sm {
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width: 720px) {
+  .grid-row-md {
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .grid-row-lg {
+    flex-direction: row;
+  }
+}
+
+.box-model {
+  background-color: lightgrey;
+  width: 30%;
+  padding: 10%;
+  border: 25px solid green;
+  border-radius: 30px;
+  margin: 25px;
+  font-family: cursive;
+}

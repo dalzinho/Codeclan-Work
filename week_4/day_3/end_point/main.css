@@ -1,0 +1,50 @@
+/* DISPLAY TYPES */
+
+#display-types {
+  font: 22px Helvetica;
+  border: 3px solid grey;
+  padding: 10px;
+  width: 50%;
+}
+
+#display-types span {
+  color: white;
+  background-color: #981ba2;
+}
+
+#display-types button {
+  /*height: px;*/
+  font-size: 20px;
+  /*width: auto;*/
+  margin: 10px;
+}
+
+/* MOVING BLOCKS */
+
+#blocks div {
+  text-align: center;
+  font: 30px Helvetica;
+  color: white;
+  padding: 10px;
+}
+
+.red {
+  display: inline-block;
+  background-color: #d9534f;
+}
+
+.blue {
+  
+  background-color: #428bca;
+  display: none;
+}
+
+.green {
+
+  background-color: #5cb85c;
+  display: inline-block;
+}
+
+/*.text-span {
+  margin: 20px;
+}*/
