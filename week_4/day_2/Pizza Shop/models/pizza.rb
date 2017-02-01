@@ -37,7 +37,7 @@ class Pizza
   end
 
   def self.find( id )
-    sql = "SELECT * FROM pizzas WHERE id=#{id}"
+    sql = "SELECT * FROM pizzas WHERE id=#{id};"
     pizza = SqlRunner.run( sql )
     result = Pizza.new( pizza.first )
 

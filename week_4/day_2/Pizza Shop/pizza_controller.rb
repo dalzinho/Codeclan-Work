@@ -16,7 +16,9 @@ end
 
 # send the form just made above (create)
 post '/pizzas' do
-
+  @pizza = Pizza.new(params)
+  @pizza.save
+  erb (:create)
 end
 
 # get a pizza by id (show)
@@ -33,10 +35,12 @@ end
 
 # request (edit) pizza form
 get '/pizzas/:id/edit' do
-
+  @pizza = Pizza.find(params[:id])
+  erb (:edit)
 end
 
 # actually (update) the pizza by id
-post '/pizzas/:id/edit' do
-
+post '/pizzas/:id' do
+  @pizza = Pizza.update(params)
+  redirect to("/pizzas/#{params[:id]}")
 end
