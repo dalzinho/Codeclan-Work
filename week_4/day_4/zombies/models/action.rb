@@ -7,6 +7,7 @@ class Action
             "chewed on", 
             "beasted",
             "brutalised",
-            "fried"]
+            "fried",
+            "pumped"]
   end
 end
