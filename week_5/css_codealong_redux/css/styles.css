@@ -1,0 +1,26 @@
+body {
+  font-family: 'Arsenal', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Pacifico', cursive !important;
+}
+
+.navbar-default {
+  background-color: #C5C9A4;
+}
+
+@media (min-width: @screen-lg-min) {
+.navbar .nav {
+  margin: 0;
+  display: table;
+  width: 80%;
+}
+
+.navbar .nav > li {
+  width: 15%;
+  display: table-cell;
+  float: none;
+  text-align: center;
+}
+}
