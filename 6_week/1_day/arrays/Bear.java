@@ -24,4 +24,14 @@ public class Bear{
   public void goToWoods() {
     belly.clear();
   }
+
+  public void remove(Salmon salmon) {
+    for(Salmon jam : this.belly) {
+      if (jam.getName() == salmon.getName()) {
+        System.out.println("The name of the fish is " + jam.getName());
+        belly.remove(jam);
+        // System.out.print(belly);
+      }
+    }
+  }
 }
