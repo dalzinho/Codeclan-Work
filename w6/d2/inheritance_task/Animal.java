@@ -1,10 +1,10 @@
 class Animal {
 
-  public void eat(){
-
+  public String eat(){
+    return "The beast shovels food into its beastly maw.";
   }
 
-  public void breathe(){
-    
+  public String breathe(){
+    return "The creature inhales and exhales.";
   }
 }
