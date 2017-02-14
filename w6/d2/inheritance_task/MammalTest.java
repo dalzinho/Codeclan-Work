@@ -49,4 +49,9 @@ public class MammalTest {
   public void chimpanzeeCanEat(){
     assertEquals("The beast shovels food into its beastly maw.", chimp.eat());
   }
+
+  @Test
+  public void humanCanBreathe(){
+    assertEquals("The creature inhales and exhales.", human.breathe());
+  }
 }
