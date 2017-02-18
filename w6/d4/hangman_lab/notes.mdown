@@ -1,0 +1,2 @@
+* stores characters as upper and lower case.
+** How can this be set to downcase in memory?
