@@ -12,10 +12,10 @@ public class Movie {
     int currentRanking;
 
     //constructor
-    public Movie(String title, String genre){
+    public Movie(String title, String genre, int rank){
         this.title = title;
         this.genre = genre;
-        this.currentRanking = 1;
+        this.currentRanking = rank;
     }
 
     //setters und getters

@@ -51,7 +51,7 @@ public class Answer implements Answerable {
 
     private void setUpAnswers(){
 
-        String[] answersToAdd = {"What else is this like", "Feed the recording back out of the medium", "List the qualities it has. List those you'd like"};
+        String[] answersToAdd = {"What else is this like?", "Feed the recording back out of the medium.", "List the qualities it has. List those you'd like."};
 
       for(String answer : answersToAdd){
           addAnswer(answer);

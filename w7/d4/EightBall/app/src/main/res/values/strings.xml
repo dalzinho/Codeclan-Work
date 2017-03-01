@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Eight Ball</string>
+    <string name="app_name">Oblique Strategies Ball</string>
+    <string name="question">What is on your mind?</string>
+    <string name="dev_name">John Daly</string>
+    <string name="developer_name">JD</string>
+    <string name="shake">Consult the Strategies</string>
+    <string name="answer_activity_title">Something to think about...</string>
+    <string name="go_to_website">Go to website</string>
 </resources>

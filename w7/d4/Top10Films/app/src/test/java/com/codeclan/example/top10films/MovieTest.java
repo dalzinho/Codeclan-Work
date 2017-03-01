@@ -15,7 +15,7 @@ public class MovieTest {
 
     @Before
     public void before(){
-        movie1 = new Movie("Stachka!", "Historical");
+        movie1 = new Movie("Stachka!", "Historical", 1);
     }
 
     @Test
