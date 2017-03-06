@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MenuExample</string>
+    <string name="hello">Zdravstvuyte!</string>
+    <string name="goodbye">Do svidaniya!</string>
+</resources>
