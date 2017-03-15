@@ -4,6 +4,7 @@ class Pda {
   }
 
   public int max(int a, int b){
+    
     if(a > b){
       return a;
     }else{
@@ -13,11 +14,12 @@ class Pda {
 
   public int looper(){
     int i = 0;
-    while(i <= 10){
+    // while(i <= 10){
+    //the function below suggests the looper needs to reach 10, not 11
+    while(i < 10){
       i++;
     }
       return i;
-
   } 
 
   public String checkLoop(){

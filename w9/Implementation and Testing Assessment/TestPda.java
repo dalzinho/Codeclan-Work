@@ -27,14 +27,18 @@ public class TestPda{
     assertEquals(2, pda.max(1,2));
   }
 
+  @Test void testReturnIfAandBEqual(){
+    assertEquals(null, pda.max(1,1));
+  }
+
   @Test
-  public void testLooperReturnsEleven(){
-    assertEquals(11, pda.looper());
+  public void testLooperReturnsTen(){
+    assertEquals(10, pda.looper());
   }
 
   @Test
   public void testCheckLoopReturnsFailedWhenLooperRun(){
-    assertEquals("looper failed", pda.checkLoop());
+    assertEquals("looper passed", pda.checkLoop());
   }
 
 }
