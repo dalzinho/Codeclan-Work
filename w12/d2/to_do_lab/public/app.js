@@ -1,3 +1,5 @@
+var todos = [];
+
 var init = function(){
   var state = JSON.parse(localStorage.getItem('todoList')) || [];
   var list = document.querySelector('#todo-list');
@@ -6,6 +8,8 @@ var init = function(){
   button.onclick = handleClick;
 
   populate(list, state);
+
+
 }
 
 var populate = function(list, state){
@@ -30,10 +34,15 @@ var handleClick = function(){
   //invoke addItem
   addItem(todoList, inputValue);
   //invoke save
+  save(inputValue);
+
+  input.value = "";
 }
 
 var save = function(item){
-  //save the item to localStorage 
+  //save the item to localStorage
+  todos.push(item);
+  var savedTasks = localStorage.setItem('todoList', JSON.stringify(todos));
   //NOTE You'll have to use JSON.stringify
 }
 
