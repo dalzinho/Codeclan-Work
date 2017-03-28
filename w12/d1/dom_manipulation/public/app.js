@@ -66,6 +66,12 @@ var app = function(){
   for (var quote of quotesArray){
     addQuote(quote.author, quote.quote);
   }
+
+  var body = document.querySelector('#quotes');
+  body.style.visibility='hidden';
+
+ 
 };
+
 
 window.onload = app;
