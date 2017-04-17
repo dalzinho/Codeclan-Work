@@ -1,0 +1,16 @@
+
+#comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#comment-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#comment {
+  font-family: cursive;
+}
