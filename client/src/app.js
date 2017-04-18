@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import NetflixContainer from './containers/NetflixContainer';
 
 window.onload = function(){
   ReactDOM.render(
-    <h1> App Started </h1>,
+    <NetflixContainer />,
     document.getElementById('app')
   );
 }
